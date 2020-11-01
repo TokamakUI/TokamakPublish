@@ -67,18 +67,12 @@ public protocol TokamakHTMLFactory: HTMLFactory {
     -> TagDetailsView
 }
 
-private extension View {
-  var plotHTML: Plot.HTML {
-    Plot.HTML(.raw(StaticHTMLRenderer(self).html))
-  }
-}
-
 public extension TokamakHTMLFactory {
   func makeIndexHTML(for index: Index, context: PublishingContext<Site>) throws -> Plot
     .HTML
   {
     let content = try makeIndexView(for: index, context: context)
-    return ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity).plotHTML
+    return .init(.view(ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity)))
   }
 
   func makeSectionHTML(
@@ -86,33 +80,33 @@ public extension TokamakHTMLFactory {
     context: PublishingContext<Site>
   ) throws -> Plot.HTML {
     let content = try makeSectionView(for: section, context: context)
-    return ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity).plotHTML
+    return .init(.view(ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity)))
   }
 
   func makeItemHTML(for item: Item<Site>, context: PublishingContext<Site>) throws -> Plot
     .HTML
   {
     let content = try makeItemView(for: item, context: context)
-    return ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity).plotHTML
+    return .init(.view(ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity)))
   }
 
   func makePageHTML(for page: Page, context: PublishingContext<Site>) throws -> Plot.HTML {
     let content = try makePageView(for: page, context: context)
-    return ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity).plotHTML
+    return .init(.view(ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity)))
   }
 
   func makeTagListHTML(for page: TagListPage,
                        context: PublishingContext<Site>) throws -> Plot.HTML?
   {
     let content = try makeTagListView(for: page, context: context)
-    return ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity).plotHTML
+    return .init(.view(ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity)))
   }
 
   func makeTagDetailsHTML(for page: TagDetailsPage,
                           context: PublishingContext<Site>) throws -> Plot.HTML?
   {
     let content = try makeTagDetailsView(for: page, context: context)
-    return ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity).plotHTML
+    return .init(.view(ScrollView { content }.frame(minWidth: 0, maxWidth: .infinity)))
   }
 }
 

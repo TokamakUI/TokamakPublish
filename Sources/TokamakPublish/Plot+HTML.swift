@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import Plot
+import TokamakStaticHTML
 
 public extension Plot.Node {
   static func view<V>(_ view: V) -> Self where V: View {
@@ -23,5 +24,19 @@ public extension Plot.Node {
     where V: View
   {
     .raw(StaticHTMLRenderer(body()).html)
+  }
+}
+
+extension Plot.Node: AnyHTML {
+  public var innerHTML: String? {
+    render()
+  }
+
+  public var tag: String {
+    "div"
+  }
+
+  public var attributes: [HTMLAttribute: String] {
+    [:]
   }
 }
