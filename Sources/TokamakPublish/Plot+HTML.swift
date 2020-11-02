@@ -27,7 +27,7 @@ public extension Plot.Node {
   }
 }
 
-extension Plot.Node: AnyHTML {
+extension Plot.Node: View, AnyHTML where Context == Plot.HTML.BodyContext {
   public var innerHTML: String? {
     render()
   }
@@ -38,5 +38,9 @@ extension Plot.Node: AnyHTML {
 
   public var attributes: [HTMLAttribute: String] {
     [:]
+  }
+
+  public var body: Never {
+    fatalError("Plot Nodes should be evaluated as HTML. This is a bug.")
   }
 }
