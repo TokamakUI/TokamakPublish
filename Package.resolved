@@ -33,17 +33,26 @@
         "repositoryURL": "https://github.com/swiftwasm/JavaScriptKit.git",
         "state": {
           "branch": null,
-          "revision": "8ba4135d5fd6a734c3771ef3fac66896bbcb0214",
-          "version": "0.8.0"
+          "revision": "b7a02434c6e973c08c3fd5069105ef44dd82b891",
+          "version": "0.9.0"
         }
       },
       {
         "package": "OpenCombine",
-        "repositoryURL": "https://github.com/MaxDesiatov/OpenCombine.git",
+        "repositoryURL": "https://github.com/TokamakUI/OpenCombine.git",
         "state": {
           "branch": null,
-          "revision": "29ab27e488a1c9afef217b1435b3293d4a77b1ae",
-          "version": "0.0.1"
+          "revision": "eea5e707b571da14fce588000046b8ec4c62018b",
+          "version": "0.12.0-alpha3"
+        }
+      },
+      {
+        "package": "OpenCombineJS",
+        "repositoryURL": "https://github.com/swiftwasm/OpenCombineJS.git",
+        "state": {
+          "branch": null,
+          "revision": "5e8636b15bcb4b8900696d95daaab941458ed2cf",
+          "version": "0.0.2"
         }
       },
       {
@@ -95,8 +104,8 @@
         "package": "Tokamak",
         "repositoryURL": "https://github.com/TokamakUI/Tokamak.git",
         "state": {
-          "branch": "publish-support",
-          "revision": "aed4fc37ec74aa67b1f9135f5d43ffdecee11c1c",
+          "branch": "main",
+          "revision": "25e2191154e56db40db03924aa71716c2fe79cde",
           "version": null
         }
       }
