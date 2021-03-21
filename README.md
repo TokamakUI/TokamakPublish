@@ -1,6 +1,6 @@
 # TokamakPublish
 
-Use Tokamak for your Publish themes.
+Use Tokamak in your themes for [the Publish static generator](https://github.com/johnsundell/Publish).
 
 You can either write your entire theme with Tokamak, or integrate it with your existing `Plot` HTML.
 
