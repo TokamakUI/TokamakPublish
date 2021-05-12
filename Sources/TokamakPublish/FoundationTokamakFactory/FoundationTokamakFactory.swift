@@ -16,9 +16,10 @@ import Foundation
 import Publish
 
 public struct FoundationTokamakFactory<Site: Website>: TokamakHTMLFactory {
-  public func makeIndexView(for index: Index,
-                            context: PublishingContext<Site>) throws -> some View
-  {
+  public func makeIndexView(
+    for index: Index,
+    context: PublishingContext<Site>
+  ) throws -> some View {
     Header(context: context, selectedSection: nil)
     VStack(alignment: .leading) {
       Text(index.title)
@@ -55,9 +56,10 @@ public struct FoundationTokamakFactory<Site: Website>: TokamakHTMLFactory {
     Footer(site: context.site)
   }
 
-  public func makeItemView(for item: Item<Site>,
-                           context: PublishingContext<Site>) throws -> some View
-  {
+  public func makeItemView(
+    for item: Item<Site>,
+    context: PublishingContext<Site>
+  ) throws -> some View {
     Header(context: context, selectedSection: item.sectionID)
     VStack(alignment: .leading) {
       item.body
@@ -69,7 +71,10 @@ public struct FoundationTokamakFactory<Site: Website>: TokamakHTMLFactory {
     Footer(site: context.site)
   }
 
-  public func makePageView(for page: Page, context: PublishingContext<Site>) throws -> some View {
+  public func makePageView(
+    for page: Page,
+    context: PublishingContext<Site>
+  ) throws -> some View {
     Header(context: context, selectedSection: nil)
     VStack(alignment: .leading) {
       page.body
@@ -79,8 +84,10 @@ public struct FoundationTokamakFactory<Site: Website>: TokamakHTMLFactory {
     Footer(site: context.site)
   }
 
-  public func makeTagListView(for page: TagListPage,
-                              context: PublishingContext<Site>) throws -> some View
+  public func makeTagListView(
+    for page: TagListPage,
+    context: PublishingContext<Site>
+  ) throws -> some View
   {
     Header(context: context, selectedSection: nil)
     VStack(alignment: .leading) {
@@ -97,9 +104,10 @@ public struct FoundationTokamakFactory<Site: Website>: TokamakHTMLFactory {
     Footer(site: context.site)
   }
 
-  public func makeTagDetailsView(for page: TagDetailsPage,
-                                 context: PublishingContext<Site>) throws -> some View
-  {
+  public func makeTagDetailsView(
+    for page: TagDetailsPage,
+    context: PublishingContext<Site>
+  ) throws -> some View {
     Header(context: context, selectedSection: nil)
     VStack(alignment: .leading) {
       HStack {

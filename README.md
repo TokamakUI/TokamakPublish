@@ -45,6 +45,43 @@ struct MyThemeFactory<Site: Website>: TokamakHTMLFactory {
 
 ## Plot integration
 
+TokamakPublish integrates with both the `Component` and `Node` APIs.
+
+### Component API
+
+You can use any `View` inside of a `Component` body with `ViewComponent`:
+
+```swift
+struct Header: Component {
+  var body: Component {
+    H1("My Website")
+    Text("This is a Tokamak ") + Text("View")
+      .font(.system(.body, design: .monospaced))
+    ViewComponent(MyTokamakView())
+  }
+}
+```
+
+And vice-versa with `ComponentView`:
+
+```swift
+struct ContentView: View {
+  var body: some View {
+    Text("My Website")
+      .font(.largeTitle)
+    ComponentView(Header())
+  }
+}
+```
+
+There are also modifiers to convert from one to the other:
+```swift
+Header().view() // Component -> View
+ContentView().component() // View -> Component
+```
+
+### Node API
+
 You can include Tokamak views in your Plot HTML with the `view` Node:
 
 ```swift

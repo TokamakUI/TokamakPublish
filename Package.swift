@@ -12,7 +12,7 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(url: "https://github.com/JohnSundell/Publish.git", from: "0.7.0"),
+    .package(url: "https://github.com/JohnSundell/Publish.git", from: "0.8.0"),
     .package(url: "https://github.com/TokamakUI/Tokamak.git", .branch("main")),
   ],
   targets: [
