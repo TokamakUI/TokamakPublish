@@ -17,18 +17,19 @@ import TokamakStaticHTML
 
 public extension Plot.Node {
   static func view<V>(_ view: V) -> Self where V: View {
-    .raw(StaticHTMLRenderer(view).html)
+    .raw(StaticHTMLRenderer(view).render())
   }
 
   static func view<V>(@ViewBuilder _ body: () -> V) -> Self
     where V: View
   {
-    .raw(StaticHTMLRenderer(body()).html)
+    .raw(StaticHTMLRenderer(body()).render())
   }
 }
 
 extension Plot.Node: View, AnyHTML where Context == Plot.HTML.BodyContext {
-  public var innerHTML: String? {
+  public func innerHTML(shouldSortAttributes: Bool) -> String? {
+    // Skipping `shouldSortAttributes` since Plot rendering does not support attribute sorting.
     render()
   }
 
